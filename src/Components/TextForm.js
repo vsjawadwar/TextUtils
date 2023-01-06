@@ -16,16 +16,19 @@ let myStyle={color:'white',
     console.log("Upper Case is clicked");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to Upper Case","success");
   };
   const lowerCase = () => {
     console.log("Lower Case is clicked");
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Lower Case","success");
   };
   const copyText = () => {
     let text = document.getElementById('exampleFormControlTextarea1');
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text Copied Successfully","success");
   };
   const onChangeHandle = (event) => {
     setText(event.target.value);
