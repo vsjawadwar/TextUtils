@@ -8,42 +8,41 @@ export default function About(props) {
     };
     return (
         <>
-            <div className="container">
-                <h2 className="my-3" style={myStyle}>{props.heading}</h2>
+            <div className="container my-3">
                 <div className="accordion" id="accordionExample" style={myStyle}>
                     <div className="accordion-item" style={myStyle}>
                         <h2 className="accordion-header" id="headingOne" style={myStyle}>
                             <button className="accordion-button" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Accordion Item #1
+                                <strong>Analyze Your Text</ strong>
                             </button>
                         </h2>
                         <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div className="accordion-body">
-                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                TextUtils gives you a way to analyze your text quickly and efficiently. Be it word count,character count and much more. So you can come here with your text and manipulate as you want.
                             </div>
                         </div>
                     </div>
                     <div className="accordion-item" style={myStyle}>
                         <h2 className="accordion-header" id="headingTwo" style={myStyle} >
                             <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Accordion Item #2
+                                <strong>Free to use</strong>
                             </button>
                         </h2>
                         <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div className="accordion-body">
-                                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            TextUtils is a free character counter tool that provides instant characters count & word count statstistics for a given text. TextUtils reports a number of words and character. Thus it is suitable for writing text with words/character limit.
                             </div>
                         </div>
                     </div>
                     <div className="accordion-item" style={myStyle}>
                         <h2 className="accordion-header" id="headingThree" style={myStyle}>
                             <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Accordion Item #3
+                                <strong>Browser Compatible</strong>
                             </button>
                         </h2>
                         <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div className="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                This TextUtils web application works on any browser such as Google Chrome, Mozzila Firefox , Internet Explorer , Safari , Opera etc. It suits to count character on facebook post,blogs,books and excel documents,pdf documents and essays.
                             </div>
                         </div>
                     </div>

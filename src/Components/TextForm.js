@@ -28,23 +28,37 @@ let myStyle={color:'white',
     let text = document.getElementById('exampleFormControlTextarea1');
     text.select();
     navigator.clipboard.writeText(text.value);
+    document.getSelection().removeAllRanges(); // For deselecting text post copy operation.
     props.showAlert("Text Copied Successfully","success");
+  };
+  const clearText=()=>{
+    let newText ="";
+    setText(newText);
+    props.showAlert("Text Cleared Successfully","success");
+  };
+  const extraSpaceRemove=()=>{
+    let newText=text.split(/[ ]+/);
+    setText(newText.join(" "));
+    props.showAlert("Extra Spaces Removed Successfully","success");
   };
   const onChangeHandle = (event) => {
     setText(event.target.value);
   };
   return (
     <>
-      <div className="container" style={props.mode==='dark'? myStyle : myStyleDark}>
-        <h3>{props.heading}</h3>
+      <div className="container my-3" style={props.mode==='dark'? myStyle : myStyleDark}>
+        <h3 className='my-2 text-center'>{props.heading}</h3>
         <textarea className="form-control" style={props.mode==='dark'? myStyle : myStyleDark} id="exampleFormControlTextarea1" onChange={onChangeHandle} rows="10" value={text}></textarea>
-        <button type="button" style={props.mode==='dark'? myStyle : myStyleDark} className="btn btn-primary my-3" onClick={upperCase}>Upper Case</button>
-        <button type="button" style={props.mode==='dark'? myStyle : myStyleDark} className="btn btn-primary mx-2" onClick={lowerCase}>Lower Case</button>
-        <button type="button" style={props.mode==='dark'? myStyle : myStyleDark} className="btn btn-primary mx-2" onClick={copyText}>Copy Text</button>
+        <button type="button" disabled={text.length===0}style={props.mode==='dark'? myStyle : myStyleDark} className="btn btn-primary mx-2 my-3" onClick={upperCase}>Upper Case</button>
+        <button type="button" disabled={text.length===0}style={props.mode==='dark'? myStyle : myStyleDark} className="btn btn-primary mx-2 my-3" onClick={lowerCase}>Lower Case</button>
+        <button type="button" disabled={text.length===0}style={props.mode==='dark'? myStyle : myStyleDark} className="btn btn-primary mx-2 my-3" onClick={copyText}>Copy Text</button>
+        <button type="button" disabled={text.length===0}style={props.mode==='dark'? myStyle : myStyleDark} className="btn btn-primary mx-2 my-3" onClick={extraSpaceRemove}>Remove Extra Spaces</button>
+        <button type="button" disabled={text.length===0}style={props.mode==='dark'? myStyle : myStyleDark} className="btn btn-primary mx-2 my-3" onClick={clearText}>Clear Text</button>
+
       </div>
       <div className="container my-3">
         <h3>Text Summary</h3>
-        <p>{text.split(" ").length} Words {text.length} Characters</p>
+        <p>{text.split(" ").filter((element)=>{return element.length !== 0;}).length} Words {text.length} Characters</p>
       </div>
     </>
   )
